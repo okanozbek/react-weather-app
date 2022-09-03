@@ -1,5 +1,4 @@
 import "./App.scss";
-import { useEffect } from "react";
 import CitySelect from "./components/CitySelect";
 import WeatherCard from "./components/Weather";
 

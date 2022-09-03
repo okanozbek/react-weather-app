@@ -1,20 +1,14 @@
-import { useEffect } from "react";
-import { useCity } from "../../context/CityContext";
+import { useCity } from '../../context/CityContext';
 
 const CitySelect = () => {
   const { setCurrentCity, currentCity, cities, loading } = useCity();
 
-  useEffect(() => {
-    handleSelect();
-  }, []);
-
   const handleSelect = (e) => {
     cities.filter((city) => {
-      if (city.id === Number(e.target.value)) {
-        setCurrentCity(city);
-      }
+      return city.id === Number(e.target.value) && setCurrentCity(city);
     });
   };
+
   return (
     <div className="weather__select-city">
       <h5>Select City</h5>

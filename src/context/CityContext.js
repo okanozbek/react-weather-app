@@ -1,5 +1,5 @@
-import { useState, createContext, useContext, useEffect } from "react";
-import axios from "axios";
+import { useState, createContext, useContext, useEffect } from 'react';
+import axios from 'axios';
 
 const CityContext = createContext();
 
@@ -7,11 +7,11 @@ const CityProvider = ({ children }) => {
   const [cities, setCities] = useState([]);
   const [currentCity, setCurrentCity] = useState({
     id: 35,
-    latitude: "38.4189",
-    longitude: "27.1287",
-    name: "İzmir",
+    latitude: '38.4189',
+    longitude: '27.1287',
+    name: 'İzmir',
     population: 4168415,
-    region: "Ege",
+    region: 'Ege',
   });
   const [loading, setLoading] = useState(false);
   const values = {
@@ -29,7 +29,6 @@ const CityProvider = ({ children }) => {
       .then((res) => {
         setCities(res.data);
         setLoading(false);
-        console.log("cities : ", res.data);
       })
       .catch((error) => console.log(error));
   };
